@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div v-for="(ask,idx) in ask" :key="idx">{{ask.title}}</div>
+        <div v-for="(ask,idx) in fetchedAsk" :key="idx">{{ask.title}}</div>
     </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 
 export default {
@@ -14,12 +14,21 @@ export default {
         }
     },
     computed: {
-        ...mapState({
-            ask: state => state.ask
-        })
         // ask(){
         //     return this.$store.state.ask;
         // }
+
+        // ...mapState({
+        //     ask: state => state.ask
+        // })
+
+        ...mapGetters({
+            fetchedAsk: 'fetchedAsk',
+        }),
+
+        // ...mapGetters(['fetchedAsk']),
+
+
     },
     created(){
         this.$store.dispatch('FETCH_ASK');

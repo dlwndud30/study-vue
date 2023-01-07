@@ -12,7 +12,9 @@ export const store  = new Vuex.Store({
     jobs: [],
   },
   getters: {
-
+    fetchedAsk(state){
+        return state.ask;
+    },
   },
   mutations: {
     SET_NEWS(state, data){
