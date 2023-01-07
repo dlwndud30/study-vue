@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="user in users" :key="user">{{user.title}}</div>
+    <div v-for="(user,idx) in users" :key="idx">{{user.title}}</div>
   </div>
 </template>
 
@@ -13,9 +13,31 @@ export default {
         }
     },
     created(){
+        console.log('호출 전: ', this);
+
+        // var vm =this;
+        // fetchNewsList().then(function(response){
+        //     //비동기함수에서의 this -> this: undefined
+        //     //화살표 함수 사용 -> 호출 전 this와 호출 후 this가 동일
+        //     console.log('호출 후: ', this);
+        
+        //     console.log(response);
+        //     vm.users = response.data;
+        // })
+        // .catch(function(error){
+        //     console.log(error);
+        // });
+
         fetchNewsList().then((response)=>{
+            //비동기함수에서의 this -> this: undefined
+            //화살표 함수 사용 -> 호출 전 this와 호출 후 this가 동일
+            console.log('호출 후: ', this);
+        
             console.log(response);
             this.users = response.data;
+        })
+        .catch(function(error){
+            console.log(error);
         });
     }
 }
