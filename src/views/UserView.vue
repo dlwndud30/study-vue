@@ -1,13 +1,13 @@
 <template>
   <div>
     <p>
-      name: {{this.$store.state.user.id}}
+      name: {{userInfo.id}}
     </p>
     <p>
-      karma: {{this.$store.state.user.karma}}
+      karma: {{userInfo.karma}}
     </p>
     <p>
-      created: {{this.$store.state.user.created}}
+      created: {{userInfo.created}}
     </p>
   </div>
 </template>
@@ -16,12 +16,17 @@
 // import axios from 'axios';
 
 export default {
+  computed:{
+    userInfo() {
+      return this.$store.state.user;
+    },
+  },
   created(){
     console.log(this.$route.params.id);
     const userName = this.$route.params.id;
     this.$store.dispatch('FETCH_USER', userName);
     // axios.get(`https://api.hnpwa.com/v0/user/${userName}.json`);
-  }
+  },
 }
 </script>
 
