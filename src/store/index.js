@@ -28,9 +28,9 @@ export const store  = new Vuex.Store({
   actions: {
     FETCH_NEWS(context){
         fetchNewsList()
-          .then((response)=>{
-            console.log(response);
-            context.commit('SET_NEWS', response.data);
+          .then(({data})=>{
+            console.log(data);
+            context.commit('SET_NEWS', data);
             //state.news = response.data //store 구조 상 이게 불가능 -> mutation을 통해야함
           })
           .catch((error)=>{
