@@ -33,7 +33,7 @@ export const router = new VueRouter({
         component: ItemView,  //url 주소로 갔을 때 표시할 컴포넌트
     },
     {
-        path: '/user',  //url에 대한 정보 = url 주소
+        path: '/user/:id',  //url에 대한 정보 = url 주소
         component: UserView,  //url 주소로 갔을 때 표시할 컴포넌트
     },
   ]
