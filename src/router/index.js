@@ -29,7 +29,7 @@ export const router = new VueRouter({
         component: AskView,  //url 주소로 갔을 때 표시할 컴포넌트
     },
     {
-        path: '/item',  //url에 대한 정보 = url 주소
+        path: '/item/:id',  //url에 대한 정보 = url 주소
         component: ItemView,  //url 주소로 갔을 때 표시할 컴포넌트
     },
     {

@@ -1,9 +1,9 @@
 <template>
     <div>
       <p v-for="(item,idx) in fetchedAsk" :key="idx">
-        <a :href="item.url">
+        <router-link :to="`/item/${item.id}`">
             {{item.title}}
-        </a>
+        </router-link>
         <small>
             {{item.time_ago}} by {{item.user}}
         </small>
@@ -21,21 +21,9 @@ export default {
         }
     },
     computed: {
-        // ask(){
-        //     return this.$store.state.ask;
-        // }
-
-        // ...mapState({
-        //     ask: state => state.ask
-        // })
-
         ...mapGetters({
             fetchedAsk: 'fetchedAsk',
         }),
-
-        // ...mapGetters(['fetchedAsk']),
-
-
     },
     created(){
         this.$store.dispatch('FETCH_ASK');
