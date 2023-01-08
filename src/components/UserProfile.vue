@@ -4,12 +4,11 @@
       <i class="fa fa-user-circle-o"></i>
     </div>
     <div class="user-description">
-      <div>
-        {{info.id}}
-      </div>
+      <slot name="username"></slot>
       <div class="time">
-        {{info.created}}
-      </div>
+        <slot name="time"></slot>
+      </div> 
+      <slot name="karma"></slot>   
     </div>
   </div>
 </template>
