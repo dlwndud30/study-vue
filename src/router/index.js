@@ -6,6 +6,7 @@ import JobsView from '../views/JobsView.vue';
 import AskView from '../views/AskView.vue';
 import ItemView from '../views/ItemView.vue';
 import UserView from '../views/UserView.vue';
+import createListView from '@/views/CreateListView.js';
 
 Vue.use(VueRouter);
 
@@ -19,17 +20,17 @@ export const router = new VueRouter({
     {
         path: '/news',  //url에 대한 정보 = url 주소
         name: 'news',
-        component: NewsView,  //url 주소로 갔을 때 표시할 컴포넌트
+        component: createListView('NewsView'),  //url 주소로 갔을 때 표시할 컴포넌트
     },
         {
         path: '/jobs',  //url에 대한 정보 = url 주소
         name: 'jobs',
-        component: JobsView,  //url 주소로 갔을 때 표시할 컴포넌트
+        component: createListView('JobsView'),  //url 주소로 갔을 때 표시할 컴포넌트
     },
         {
         path: '/ask',  //url에 대한 정보 = url 주소
         name: 'ask',
-        component: AskView,  //url 주소로 갔을 때 표시할 컴포넌트
+        component: createListView('AskView'),  //url 주소로 갔을 때 표시할 컴포넌트
     },
     {
         path: '/item/:id',  //url에 대한 정보 = url 주소

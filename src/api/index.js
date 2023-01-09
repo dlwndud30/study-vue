@@ -9,19 +9,19 @@ const config = {
 function fetchNewsList(){
     return axios.get(`${config.baseUrl}news/1.json`);
 }
-
 function fetchAskList(){
     return axios.get(`${config.baseUrl}ask/1.json`);
 } 
-
 function fetchJobsList(){
     return axios.get(`${config.baseUrl}jobs/1.json`);
 } 
+function fetchList(pageName){
+    return axios.get(`${config.baseUrl}${pageName}/1.json`);
+}
 
 function fetchUserInfo(userName){
     return axios.get(`${config.baseUrl}user/${userName}.json`);
 }
-
 function fetchItem(id){
     return axios.get(`${config.baseUrl}item/${id}.json`);
 } 
@@ -32,4 +32,5 @@ export {
     fetchJobsList,
     fetchUserInfo,
     fetchItem,
+    fetchList,
 }
