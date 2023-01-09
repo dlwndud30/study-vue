@@ -5,10 +5,12 @@
     </div>
     <div class="user-description">
       <slot name="username"></slot>
-      <div class="time">
-        <slot name="time"></slot>
-      </div> 
-      <slot name="karma"></slot>   
+      <div class="time-container">
+        <div class="time">
+          <slot name="time"></slot>
+        </div> 
+        <slot name="karma"></slot>   
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +41,10 @@ export default {
   padding-left: 8px;
 }
 .time{
+  font-size: 0.7rem;
+}
+.time-container{
+  display:flex;
   font-size: 0.7rem;
 }
 </style>
