@@ -9,10 +9,9 @@ import ListItem from '@/components/ListItem.vue';
 
 export default {
   components: { ListItem },
-    data(){
-        return {
-        }
-    },
+  created(){
+    this.$store.dispatch('FETCH_JOBS');
+  },
 }
 </script>
 
