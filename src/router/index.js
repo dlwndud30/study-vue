@@ -22,12 +22,12 @@ export const router = new VueRouter({
         name: 'news',
         component: createListView('NewsView'),  //url 주소로 갔을 때 표시할 컴포넌트
     },
-        {
+    {
         path: '/jobs',  //url에 대한 정보 = url 주소
         name: 'jobs',
         component: createListView('JobsView'),  //url 주소로 갔을 때 표시할 컴포넌트
     },
-        {
+    {
         path: '/ask',  //url에 대한 정보 = url 주소
         name: 'ask',
         component: createListView('AskView'),  //url 주소로 갔을 때 표시할 컴포넌트
